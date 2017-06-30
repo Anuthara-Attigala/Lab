@@ -30,6 +30,19 @@ mongoose.connect('mongodb://localhost:27017/AF1',err =>{
     }
 });
 
+allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    if ('OPTIONS' === req.method) {
+        res.send(200);
+    } else {
+        next();
+    }
+};
+
+app.use(allowCrossDomain);
+
 app.use('/sampleCenterTypes',SampleCenterTypeRouter);
 app.use('/labTests',LabTestRouter);
 app.use('/results',ResultRouter);
@@ -37,6 +50,7 @@ app.use('/requests',SampleDetailsRoute);
 app.use('/users',PharmacyRoute);
 app.use('/addDetails',AddDetailsRoute);
 app.use('/samplecenters',SampleCenterRouter);
+
 
 app.listen(3001,err =>{
     if(err){
