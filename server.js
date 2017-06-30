@@ -7,14 +7,14 @@ require('./sampleCenterType.model.js');
 require('./field.model.js');
 require('./labTest.model.js');
 require('./result.model.js');
-require('./models/pharmacy.model.js');
-require('./models/labRequest.model');
-require('./models/addDetails.model');
+require('./pharmacy.model.js');
+require('./labRequest.model');
+require('./addDetails.model');
 
 
-const SampleDetailsRoute=require('./routes/sampleDetails.route');
+const SampleDetailsRoute=require('./sampleDetails.route');
 const PharmacyRoute=require('./routes/pharmacy.route');
-const AddDetailsRoute=require('./routes/addDetails.route');
+const AddDetailsRoute=require('./addDetails.route');
 const SampleCenterTypeRouter=require('./sampleCenterType.route.js');
 const LabTestRouter=require('./labTest.route.js');
 const ResultRouter=require("./result.route.js");
