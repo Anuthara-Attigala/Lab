@@ -14,7 +14,7 @@ require('./sampleCenter.model.js');
 
 
 const SampleDetailsRoute=require('./sampleDetails.route');
-const PharmacyRoute=require('./routes/pharmacy.route');
+const PharmacyRoute=require('./pharmacy.route');
 const AddDetailsRoute=require('./addDetails.route');
 const SampleCenterTypeRouter=require('./sampleCenterType.route.js');
 const LabTestRouter=require('./labTest.route.js');
@@ -52,7 +52,7 @@ app.use('/addDetails',AddDetailsRoute);
 app.use('/samplecenters',SampleCenterRouter);
 
 
-app.listen(3001,err =>{
+app.listen(3000,err =>{
     if(err){
         console.error(err);
         return;
