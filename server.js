@@ -7,7 +7,14 @@ require('./sampleCenterType.model.js');
 require('./field.model.js');
 require('./labTest.model.js');
 require('./result.model.js');
+require('./models/pharmacy.model.js');
+require('./models/labRequest.model');
+require('./models/addDetails.model');
 
+
+const SampleDetailsRoute=require('./routes/sampleDetails.route');
+const PharmacyRoute=require('./routes/pharmacy.route');
+const AddDetailsRoute=require('./routes/addDetails.route');
 const SampleCenterTypeRouter=require('./sampleCenterType.route.js');
 const LabTestRouter=require('./labTest.route.js');
 const ResultRouter=require("./result.route.js");
@@ -24,6 +31,9 @@ mongoose.connect('mongodb://localhost:27017/AF1',err =>{
 app.use('/sampleCenterTypes',SampleCenterTypeRouter);
 app.use('/labTests',LabTestRouter);
 app.use('/results',ResultRouter);
+app.use('/requests',SampleDetailsRoute);
+app.use('/users',PharmacyRoute);
+app.use('/addDetails',AddDetailsRoute);
 
 app.listen(3001,err =>{
     if(err){
