@@ -12,6 +12,7 @@ require('./labRequest.model');
 require('./addDetails.model');
 require('./sampleCenter.model.js');
 require('./department.model.js');
+require('./lab.model.js');
 
 const SampleDetailsRoute=require('./sampleDetails.route');
 const PharmacyRoute=require('./pharmacy.route');
@@ -21,6 +22,7 @@ const LabTestRouter=require('./labTest.route.js');
 const ResultRouter=require("./result.route.js");
 const SampleCenterRouter=require('./sampleCenter.route.js');
 const DepartmentRouter=require('./department.route.js');
+const LabRouter=require('./lab.routes.js');
 const app=express();
 
 app.use(bodyParser.json());
@@ -51,8 +53,8 @@ app.use('/requests',SampleDetailsRoute);
 app.use('/users',PharmacyRoute);
 app.use('/addDetails',AddDetailsRoute);
 app.use('/samplecenters',SampleCenterRouter);
-app.use('./departments',DepartmentRouter);
-
+app.use('/departments',DepartmentRouter);
+app.use('/labs',LabRouter);
 app.listen(3000,err =>{
     if(err){
         console.error(err);
