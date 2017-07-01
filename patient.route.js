@@ -32,5 +32,19 @@ Router.delete('/:id',(req,res)=>{
     });
 });
 
+Router.put("/:id",(req,res)=>{
+    const patient=req.body;
+    delete patient._id;
+    const patientId=req.params.id;
+    PatientModel.findByIdAndUpdate(patientId,{$set:patient}).then(()=>{
+        res.json(patient);
+    }).catch(err=>{
+        console.error(err);
+        res.sendStatus(500);
+    });
+
+});
+
+
 module.exports=Router;
 
