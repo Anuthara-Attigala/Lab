@@ -22,7 +22,7 @@ const Router=express.Router();
 //     })
 // })
 Router.get("/",(req,res)=>{
-    docRequestModel.find().populate('doctorRequest').exec().then(docreq=>{
+    labRequestModel.find().populate('doctorRequest').exec().then(docreq=>{
         res.json(docreq);
     }).catch(err=>{
         console.error(err);
