@@ -22,5 +22,15 @@ Router.post('/',(req,res)=>{
         res.sendStatus(500);
     });
 });
+
+Router.delete('/:id',(req,res)=>{
+    PatientModel.findByIdAndRemove(req.params.id).then(()=>{
+        res.sendStatus(200);
+    }).catch(err=>{
+        console.error(err);
+        res.sendStatus(500);
+    });
+});
+
 module.exports=Router;
 
