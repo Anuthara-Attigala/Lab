@@ -13,6 +13,8 @@ require('./addDetails.model');
 require('./sampleCenter.model.js');
 require('./department.model.js');
 require('./lab.model.js');
+require('./patient.model.js');
+require('./login.model.js');
 
 const SampleDetailsRoute=require('./sampleDetails.route');
 const PharmacyRoute=require('./pharmacy.route');
@@ -23,6 +25,9 @@ const ResultRouter=require("./result.route.js");
 const SampleCenterRouter=require('./sampleCenter.route.js');
 const DepartmentRouter=require('./department.route.js');
 const LabRouter=require('./lab.routes.js');
+const PatientRouter=require('./patient.route.js');
+const DoctorRequestRouter=require('./doctorRequest.route.js');
+
 const app=express();
 
 app.use(bodyParser.json());
@@ -55,6 +60,8 @@ app.use('/addDetails',AddDetailsRoute);
 app.use('/samplecenters',SampleCenterRouter);
 app.use('/departments',DepartmentRouter);
 app.use('/labs',LabRouter);
+app.use('/patients',PatientRouter);
+app.use('/doctorRequest',DoctorRequestRouter);
 app.listen(3000,err =>{
     if(err){
         console.error(err);
