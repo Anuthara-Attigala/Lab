@@ -60,7 +60,7 @@ app.use('/addDetails',AddDetailsRoute);
 app.use('/samplecenters',SampleCenterRouter);
 app.use('/departments',DepartmentRouter);
 app.use('/labs',LabRouter);
-app.use('/patients',PatientRouter);
+app.use('/patient',PatientRouter);
 app.use('/doctorRequest',DoctorRequestRouter);
 app.listen(3000,err =>{
     if(err){
