@@ -22,10 +22,10 @@ const labRequestSchema = new Schema({
         type : String
     },
     reqDate : {
-        type : Date
+        type : String
     },
     dueDate : {
-        type :Date
+        type :String
     },
     reqPerson : {
         type :String

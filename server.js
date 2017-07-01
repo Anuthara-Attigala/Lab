@@ -69,3 +69,5 @@ app.listen(3000,err =>{
     }
     console.log('server is listening on port 3001');
 });
+
+module.exports = app;
