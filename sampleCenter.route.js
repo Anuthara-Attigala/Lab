@@ -34,7 +34,7 @@ Router.put("/:id",(req,res)=>{
     const sampleCenter=req.body;
     delete sampleCenter._id;
     const sampleCenterId=req.params.id;
-    SampleCenterModel.findByIdAndUpdate(sampleCenterId,{$sert:sampleCenter}).then(centerdb=>{
+    SampleCenterModel.findByIdAndUpdate(sampleCenterId,{$set:sampleCenter}).then(centerdb=>{
         res.json(sampleCenter);
     }).catch(err=>{
         console.error(err);
